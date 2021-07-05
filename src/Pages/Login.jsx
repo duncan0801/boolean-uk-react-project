@@ -1,8 +1,14 @@
-import Header from "../Components/Header"
+import Header from "../Components/Header";
+import SignIn from "../Components/SignIn";
+import useFetchUsers from "../Hooks/useFetchUsers";
+
 
 function LoginPage() {
-    return (
-        <Header/>
-    )
+    const users = useFetchUsers()
+	return (
+		<>
+            <SignIn />
+		</>
+	);
 }
-export default LoginPage
+export default LoginPage;

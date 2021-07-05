@@ -1,0 +1,84 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Duncan",
+            "lastName": "Magill",
+            "customerNumber": "00000004",
+            "password": "password",
+            "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
+            "accounts": [
+                {
+                    "accNumber": 12345678,
+                    "sortCode": "12-12-12",
+                    "balance": 1234.56,
+                    "transactions": [
+                        {
+                            "vendorName": "TESCO",
+                            "price": 1.50,
+                            "category": "groceries"
+
+                        }
+                    ]
+                }
+            ],
+            "contacts": [
+                { 
+                    "Name": "Nico Maracora",
+                    "accountNumber": "00000001",
+                    "sortCode": "12-12-12"
+                },
+                { 
+                    "Name": "Steven Rico",
+                    "accountNumber": "00000002",
+                    "sortCode": "12-12-12"
+                },
+                { 
+                    "Name": "Sergio Neaves",
+                    "accountNumber": "00000003",
+                    "sortCode": "12-12-12"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "firstName": "Nico",
+            "lastName": "Maracora",
+            "customerNumber": "00000001",
+            "password": "password",
+            "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
+            "accounts": [
+                {
+                    "accNumber": 12345678,
+                    "sortCode": "12-12-12",
+                    "balance": 1234.56,
+                    "transactions": [
+                        {
+                            "vendorName": "TESCO",
+                            "price": 1.50,
+                            "category": "groceries"
+
+                        }
+                    ]
+                }
+            ],
+            "contacts": [
+                { 
+                    "Name": "Duncan Magill",
+                    "accountNumber": "00000004",
+                    "sortCode": "12-12-12"
+                },
+                { 
+                    "Name": "Steven Rico",
+                    "accountNumber": "00000002",
+                    "sortCode": "12-12-12"
+                },
+                { 
+                    "Name": "Sergio Neaves",
+                    "accountNumber": "00000003",
+                    "sortCode": "12-12-12"
+                }
+            ]
+        }
+    ]
+}
