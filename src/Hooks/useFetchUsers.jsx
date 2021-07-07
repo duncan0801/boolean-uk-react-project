@@ -5,10 +5,9 @@ function useFetchUsers() {
     const users = useStore(state => state.users)
     const setUsers = useStore(state => state.setUsers)
     useEffect(()=> {
-        fetch(`http://localhost:4000/users`)
+        return fetch(`http://localhost:4000/users?_embed=accounts`)
         .then(resp => resp.json())
         .then(setUsers)
     }, [])
-    return users
 }
 export default useFetchUsers

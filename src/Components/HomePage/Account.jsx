@@ -2,7 +2,7 @@ import BooleanLogo from "./BooleanLogo";
 import { Link } from "react-router-dom";
 import {capitalise} from "../../Helpers.js"
 
-function Account({ accountName, accountNumber, sortCode, balance }) {
+function Account({accId, accountName, accountNumber, sortCode, balance }) {
  
 	return (
 		<div className="accountContainer">
@@ -24,8 +24,8 @@ function Account({ accountName, accountNumber, sortCode, balance }) {
 				<h4>£{balance}</h4>
 			</div>
 			<div className="actions">
-				<Link to="/home/account/:id">Make a Payment</Link>
-				<Link to="/home/account/:id/transactions">View Transcation History</Link>
+				<Link to={`/home/account/${accId}`} >Make a Payment</Link>
+				<Link to={`/home/account/${accId}/transactions`}>View Transcation History</Link>
 			</div>
 		</div>
 	);

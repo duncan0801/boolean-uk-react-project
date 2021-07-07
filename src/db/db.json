@@ -7,36 +7,6 @@
             "customerNumber": "00000004",
             "password": "password",
             "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
-            "accounts": [
-                {
-                    "accNumber": "12345678",
-                    "sortCode": "12-12-12",
-                    "accType": "current account",
-                    "balance": 1234.56,
-                    "transactions": [
-                        {
-                            "vendorName": "TESCO",
-                            "price": 1.50,
-                            "category": "groceries"
-
-                        }
-                    ]
-                },
-                {
-                    "accNumber": "12345678",
-                    "sortCode": "12-12-12",
-                    "accType": "saver account",
-                    "balance": 100.56,
-                    "transactions": [
-                        {
-                            "vendorName": "TESCO",
-                            "price": 1.50,
-                            "category": "groceries"
-
-                        }
-                    ]
-                }
-            ],
             "contacts": [
                 { 
                     "Name": "Nico Maracora",
@@ -56,27 +26,12 @@
             ]
         },
         {
-            "id": 1,
+            "id": 2,
             "firstName": "Nico",
             "lastName": "Maracora",
             "customerNumber": "00000001",
             "password": "password",
             "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
-            "accounts": [
-                {
-                    "accNumber": 12345678,
-                    "sortCode": "12-12-12",
-                    "balance": 1234.56,
-                    "transactions": [
-                        {
-                            "vendorName": "TESCO",
-                            "price": 1.50,
-                            "category": "groceries"
-
-                        }
-                    ]
-                }
-            ],
             "contacts": [
                 { 
                     "Name": "Duncan Magill",
@@ -92,6 +47,57 @@
                     "Name": "Sergio Neaves",
                     "accountNumber": "00000003",
                     "sortCode": "12-12-12"
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "id": 1 ,
+            "userId": 1,
+            "accNumber": "12345678",
+            "sortCode": "12-12-12",
+            "accType": "current account",
+            "balance": 1234.56,
+            "transactions": [
+                {
+                    "vendorName": "TESCO",
+                    "price": 1.50,
+                    "category": "groceries",
+                    "type": "outgoing",
+                    "date": "10/07/2021"
+                },
+                {
+                    "vendorName": "Amazon",
+                    "price": 10.75,
+                    "category": "groceries",
+                    "type": "outgoing",
+                    "date": "10/07/2021"
+                },
+                {
+                    "vendorName": "nicolas maracora",
+                    "price": 10.75,
+                    "category": "payment",
+                    "type": "ingoing",
+                    "date": "10/07/2021"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "accNumber": 12345678,
+            "sortCode": "12-12-12",
+            "balance": 1234.56,
+            "accType": "saver account",
+            "transactions": [
+                {
+                    "vendorName": "TESCO",
+                    "price": 1.50,
+                    "category": "groceries",
+                    "date": "10/07/2021",
+                    "type": "outgoing"
+
                 }
             ]
         }

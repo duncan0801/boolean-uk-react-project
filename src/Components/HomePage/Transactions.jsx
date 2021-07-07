@@ -1,8 +1,14 @@
 import Account from "./Account";
 import "../../styles/Transactions.css";
 import BooleanLogo from "./BooleanLogo";
+import useStore from "../../store";
+import { useParams } from "react-router";
+import Transaction from "./Transcation";
 
 function Transactions() {
+    let activeCustomer = useStore(state => state.activeCustomer)
+    const {accountId} = useParams()
+
 	return (
 		<section>
 			<h2>Transaction History</h2>
@@ -37,18 +43,15 @@ function Transactions() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Tesco</td>
-							<td>Groceries</td>
-							<td>04/07/2021</td>
-							<td>-£12.75</td>
-						</tr>
-						<tr>
-							<td>Tesco</td>
-							<td>Groceries</td>
-							<td>04/07/2021</td>
-							<td>-£12.75</td>
-						</tr>
+						{activeCustomer.accounts[accountId - 1].transactions.map(transaction => {
+                            return <Transaction
+                            vendorName={transaction.vendorName}
+                            category={transaction.category}
+                            date={transaction.date}
+                            price={transaction.price}
+                            type={transaction.type}
+                            />
+                        })}
 					</tbody>
 				</table>
 				{/* <ul className="transactionsList">

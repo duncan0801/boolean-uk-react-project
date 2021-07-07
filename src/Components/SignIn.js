@@ -49,29 +49,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
-    const users = useStore(state=> state.users)
+	const users = useStore((state) => state.users);
 	const classes = useStyles();
-	const handleChangeCN = useStore((state) => state.handleChangeCN);
-	const handleChangePassword = useStore(
-		(state) => state.handleChangePassword
-	);
-	const customerNumber = useStore((state) => state.customerNumberInput);
-	const passwordInput = useStore((state) => state.passwordInput);
-    const setActiveCustomer = useStore((state) => state.setActiveCustomer)
+	const setActiveCustomer = useStore((state) => state.setActiveCustomer);
 
 	function handleLogin(event) {
 		event.preventDefault();
 
-        users.map((user) => {
-            if(event.target.customerNumber.value === user.customerNumber && event.target.password.value === user.password) {
-                console.log("match");
-                setActiveCustomer(user)
-            }
-            else {
-                console.log("no match")
-            }
-        })
-       
+		users.map((user) => {
+			if (
+				event.target.customerNumber.value === user.customerNumber &&
+				event.target.password.value === user.password
+			) {
+				console.log("match");
+				setActiveCustomer(user);
+			} else {
+				console.log("no match");
+			}
+		});
 	}
 
 	return (
@@ -99,7 +94,6 @@ export default function SignIn() {
 						name="customerNumber"
 						autoComplete="number"
 						autoFocus
-						onChange={handleChangeCN}
 					/>
 					<TextField
 						variant="outlined"
@@ -111,7 +105,6 @@ export default function SignIn() {
 						type="password"
 						id="password"
 						autoComplete="current-password"
-						onChange={handleChangePassword}
 					/>
 					{/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
