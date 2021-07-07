@@ -14,11 +14,17 @@ function AccountModal() {
 		return (
 			<div className="accountModal">
 				<div className="modal">
-					<Button className="close">X</Button>
+					<Button onClick={() => setModal("")} className="close">X</Button>
 					<div>
-						<Button onClick={() => {setActiveCustomer(null)
-                        setModal("")}
-                    } variant="contained">LogOut</Button>
+						<Button
+							onClick={() => {
+								setActiveCustomer(null);
+								setModal("");
+							}}
+							variant="contained"
+						>
+							LogOut
+						</Button>
 					</div>
 				</div>
 			</div>

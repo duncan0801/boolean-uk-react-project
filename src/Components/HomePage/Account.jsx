@@ -24,8 +24,8 @@ function Account({ accountName, accountNumber, sortCode, balance }) {
 				<h4>£{balance}</h4>
 			</div>
 			<div className="actions">
-				<Link>Make a Payment</Link>
-				<Link>View Transcation History</Link>
+				<Link to="/home/account/:id">Make a Payment</Link>
+				<Link to="/home/account/:id/transactions">View Transcation History</Link>
 			</div>
 		</div>
 	);

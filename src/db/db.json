@@ -23,10 +23,18 @@
                     ]
                 },
                 {
-                    "accNumber": "87654321",
+                    "accNumber": "12345678",
                     "sortCode": "12-12-12",
                     "accType": "saver account",
-                    "balance": 200.56,
+                    "balance": 100.56,
+                    "transactions": [
+                        {
+                            "vendorName": "TESCO",
+                            "price": 1.50,
+                            "category": "groceries"
+
+                        }
+                    ]
                 }
             ],
             "contacts": [
