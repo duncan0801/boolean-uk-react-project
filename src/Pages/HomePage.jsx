@@ -1,39 +1,35 @@
 import UserSection from "../Components/HomePage/UserSection";
 import UserLogo from "../Components/HomePage/UserLogo";
+import Account from "../Components/HomePage/Account";
+import { Route } from "react-router";
+import QuickTransfer from "../Components/HomePage/QuickTransfer";
+import UserSummary from "../Components/HomePage/UserSummary";
+import Accounts from "../Components/HomePage/AccountsSection";
+import AccountButton from "../Components/HomePage/AccountButton";
+import MakeAPayment from "../Components/HomePage/MakeAPayment";
+import Transactions from "../Components/HomePage/Transactions";
+import AccountModal from "../Modals/Account";
 
 function HomePage() {
 	return (
 		<div className="wrapper">
-			<section className="userSection">
-				<UserLogo width="100" />
-			</section>
-			<section className="accountSummary">
-				<h2>Account Summary</h2>
-				<hr></hr>
-				<div className="sectionWrapper">
-					<h3>Duncan Magill</h3>
-					<h3>Customer Number:</h3>
-					<h3>Last Login: </h3>
-				</div>
-			</section>
-			<section className="quickTransfer">
-				<h2>Quick Transfer</h2>
-				<hr></hr>
-			</section>
-			<section className="accounts">
-				<h2>Accounts</h2>
-				<hr></hr>
-				<h3>Account 1</h3>
-				<div className="accountContainer">
-					<div>
-						<h4>Account No: 98761234</h4>
-						<h4>Sort Code: 12-12-12</h4>
-					</div>
-                    <div className="balanceContainer">
-                    <h4>Balance: £1234.97</h4>
-                    </div>
-				</div>
-			</section>
+			<AccountButton />
+			<UserSummary
+				name={"Duncan Magill"}
+				customerNumber={"00000004"}
+				lastLogin="13 May 08:00 GMT"
+			/>
+			<QuickTransfer />
+			<Route exact path="/home">
+				<Accounts />
+			</Route>
+			<Route exact path="/home/account/:id">
+				<MakeAPayment />
+			</Route>
+            <Route exact path="/home/account/:id/transactions">
+                <Transactions/>
+            </Route>
+            
 		</div>
 	);
 }

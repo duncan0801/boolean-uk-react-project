@@ -3,7 +3,8 @@ import LoginPage from "./Pages/Login";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Components/Header";
 import HomePage from "./Pages/HomePage";
-import AccountPage from "./Pages/AccountPage";
+import AccountModal from "./Modals/Account";
+
 
 function App() {
 	return (
@@ -16,10 +17,8 @@ function App() {
                 <Route path="/home">
                     <HomePage/>
                 </Route>
-                <Route path="/account">
-                    <AccountPage/>
-                </Route>
             </Switch>
+            <AccountModal/>
 		</div>
 	);
 }
