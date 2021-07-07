@@ -9,8 +9,9 @@
             "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
             "accounts": [
                 {
-                    "accNumber": 12345678,
+                    "accNumber": "12345678",
                     "sortCode": "12-12-12",
+                    "accType": "current account",
                     "balance": 1234.56,
                     "transactions": [
                         {
@@ -20,6 +21,12 @@
 
                         }
                     ]
+                },
+                {
+                    "accNumber": "87654321",
+                    "sortCode": "12-12-12",
+                    "accType": "saver account",
+                    "balance": 200.56,
                 }
             ],
             "contacts": [

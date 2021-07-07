@@ -1,10 +1,12 @@
 import BooleanLogo from "./BooleanLogo";
 import { Link } from "react-router-dom";
+import {capitalise} from "../../Helpers.js"
 
 function Account({ accountName, accountNumber, sortCode, balance }) {
+ 
 	return (
 		<div className="accountContainer">
-			<h3>{accountName}</h3>
+			<h3>{capitalise(accountName)}</h3>
 			<div className="logoContainer">
 				<BooleanLogo />
 			</div>

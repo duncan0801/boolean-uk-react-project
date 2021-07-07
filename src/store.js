@@ -12,10 +12,11 @@ const store = (set) => ({
 	},
 	users: [],
 	setUsers: (data) => set((state) => (state.users = data)),
-    activeUser: "",
-    setActiveuser: (user) => set(({activeUser: user})),
-    moadal: "",
-    setModal: (modal)
+    activeCustomer: null,
+    setActiveCustomer: (customer) => set(({activeCustomer: customer})),
+    modal: "",
+    setModal: (modal) => set(({modal}))
+    
 });
 
 const useStore = create(devtools(store));

@@ -9,15 +9,21 @@ import AccountButton from "../Components/HomePage/AccountButton";
 import MakeAPayment from "../Components/HomePage/MakeAPayment";
 import Transactions from "../Components/HomePage/Transactions";
 import AccountModal from "../Modals/Account";
+import useStore from "../store";
+import {capitalise} from "../Helpers"
 
 function HomePage() {
+    const activeCustomer = useStore(state => state.activeCustomer)
+    if(activeCustomer === null) {
+        return null
+    }
 	return (
 		<div className="wrapper">
 			<AccountButton />
 			<UserSummary
-				name={"Duncan Magill"}
-				customerNumber={"00000004"}
-				lastLogin="13 May 08:00 GMT"
+				name={capitalise(`${activeCustomer.firstName + " " + activeCustomer.lastName}`)}
+				customerNumber={activeCustomer.customerNumber}
+				lastLogin={activeCustomer.lastLogin}
 			/>
 			<QuickTransfer />
 			<Route exact path="/home">

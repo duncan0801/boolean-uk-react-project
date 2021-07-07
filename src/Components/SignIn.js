@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import useStore from "../store";
+import UserSection from "./HomePage/UserSection";
 
 function Copyright() {
 	return (
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
+    const users = useStore(state=> state.users)
 	const classes = useStyles();
 	const handleChangeCN = useStore((state) => state.handleChangeCN);
 	const handleChangePassword = useStore(
@@ -55,17 +57,21 @@ export default function SignIn() {
 	);
 	const customerNumber = useStore((state) => state.customerNumberInput);
 	const passwordInput = useStore((state) => state.passwordInput);
+    const setActiveCustomer = useStore((state) => state.setActiveCustomer)
 
-	function handleLoginSubmit(event) {
+	function handleLogin(event) {
 		event.preventDefault();
 
-		if (
-			customerNumber === event.target.customerNumber.value &&
-			passwordInput === event.target.password.value
-		) {
-			console.log("match");
-		}
-		console.log(event);
+        users.map((user) => {
+            if(event.target.customerNumber.value === user.customerNumber && event.target.password.value === user.password) {
+                console.log("match");
+                setActiveCustomer(user)
+            }
+            else {
+                console.log("no match")
+            }
+        })
+       
 	}
 
 	return (
@@ -80,7 +86,7 @@ export default function SignIn() {
 				</Typography>
 				<form
 					className={classes.form}
-					onSubmit={handleLoginSubmit}
+					onSubmit={handleLogin}
 					noValidate
 				>
 					<TextField
