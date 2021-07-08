@@ -23,4 +23,9 @@ section h2 {
 	display: grid;
     grid-template-areas: "contacts newContact amount";
 }
-
+.input {
+    background-color: #caf0f8;
+}
+label {
+    color: white;
+}

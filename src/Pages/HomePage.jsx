@@ -25,7 +25,7 @@ function HomePage() {
 			<Route exact path="/home">
 				<Accounts />
 			</Route>
-			<Route exact path="/home/account/:id">
+			<Route exact path="/home/account/:accountId">
 				<MakeAPayment />
 			</Route>
             <Route exact path="/home/account/:accountId/transactions">

@@ -19,7 +19,29 @@ const store = (set) => ({
     transactionSearchString: "",
     setTransactionSearchString: (newValue) => set(({transactionSearchString: newValue})),
     activeCustomerTransactions: [],
-    setActiveCustomerTransactions: (transactions) => set(({activeCustomerTransactions: transactions}))
+    setActiveCustomerTransactions: (transactions) => set(({activeCustomerTransactions: transactions})),
+    accounts: [],
+    setAccounts: (data) => set(({accounts: data})),
+    selectedAccount: "",
+    setSelectedAccount: (account) => set(({selectedAccount: account})),
+    setOutgoingAccountBalance: (accounts, prevBalance, amount, targetId) => set(({accounts: accounts.map((account) => {
+        if(account.id === targetId) {
+            return {
+                balance: prevBalance - amount,
+                ...account
+            }
+        }
+        return account
+    })})),
+    setIngoingAccountBalance: (accounts, prevBalance, amount, targetId) => set(({accounts: accounts.map((account) => {
+        if(account.id === targetId) {
+            return {
+                balance: prevBalance + amount,
+                ...account
+            }
+        }
+        return account
+    })})) 
 
     
 });

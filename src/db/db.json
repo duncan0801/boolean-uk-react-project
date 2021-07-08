@@ -1,105 +1,129 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Duncan",
+      "lastName": "Magill",
+      "customerNumber": "00000004",
+      "password": "password",
+      "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
+      "contacts": [
         {
-            "id": 1,
-            "firstName": "Duncan",
-            "lastName": "Magill",
-            "customerNumber": "00000004",
-            "password": "password",
-            "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
-            "contacts": [
-                { 
-                    "Name": "Nico Maracora",
-                    "accountNumber": "00000001",
-                    "sortCode": "12-12-12"
-                },
-                { 
-                    "Name": "Steven Rico",
-                    "accountNumber": "00000002",
-                    "sortCode": "12-12-12"
-                },
-                { 
-                    "Name": "Sergio Neaves",
-                    "accountNumber": "00000003",
-                    "sortCode": "12-12-12"
-                }
-            ]
+          "name": "Nico Maracora",
+          "accountNumber": "123",
+          "sortCode": "12-12-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Nico",
+      "lastName": "Maracora",
+      "customerNumber": "00000001",
+      "password": "password",
+      "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
+      "contacts": [
+        {
+          "name": "Duncan Magill",
+          "accountNumber": "12345678",
+          "sortCode": "12-12-12"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "accNumber": "12345678",
+      "sortCode": "12-12-12",
+      "accType": "current account",
+      "balance": 914.56,
+      "transactions": [
+        {
+          "vendorName": "TESCO",
+          "price": 1.5,
+          "category": "groceries",
+          "type": "outgoing",
+          "date": "10/07/2021"
         },
         {
-            "id": 2,
-            "firstName": "Nico",
-            "lastName": "Maracora",
-            "customerNumber": "00000001",
-            "password": "password",
-            "lastLogin": "Mon Jul 05 2021 14:09:44 GMT+0100 (British Summer Time)",
-            "contacts": [
-                { 
-                    "Name": "Duncan Magill",
-                    "accountNumber": "00000004",
-                    "sortCode": "12-12-12"
-                },
-                { 
-                    "Name": "Steven Rico",
-                    "accountNumber": "00000002",
-                    "sortCode": "12-12-12"
-                },
-                { 
-                    "Name": "Sergio Neaves",
-                    "accountNumber": "00000003",
-                    "sortCode": "12-12-12"
-                }
-            ]
-        }
-    ],
-    "accounts": [
-        {
-            "id": 1 ,
-            "userId": 1,
-            "accNumber": "12345678",
-            "sortCode": "12-12-12",
-            "accType": "current account",
-            "balance": 1234.56,
-            "transactions": [
-                {
-                    "vendorName": "TESCO",
-                    "price": 1.50,
-                    "category": "groceries",
-                    "type": "outgoing",
-                    "date": "10/07/2021"
-                },
-                {
-                    "vendorName": "Amazon",
-                    "price": 10.75,
-                    "category": "groceries",
-                    "type": "outgoing",
-                    "date": "10/07/2021"
-                },
-                {
-                    "vendorName": "nicolas maracora",
-                    "price": 10.75,
-                    "category": "payment",
-                    "type": "ingoing",
-                    "date": "10/07/2021"
-                }
-            ]
+          "vendorName": "Amazon",
+          "price": 10.75,
+          "category": "groceries",
+          "type": "outgoing",
+          "date": "10/07/2021"
         },
         {
-            "id": 2,
-            "userId": 1,
-            "accNumber": 12345678,
-            "sortCode": "12-12-12",
-            "balance": 1234.56,
-            "accType": "saver account",
-            "transactions": [
-                {
-                    "vendorName": "TESCO",
-                    "price": 1.50,
-                    "category": "groceries",
-                    "date": "10/07/2021",
-                    "type": "outgoing"
-
-                }
-            ]
+          "vendorName": "nicolas maracora",
+          "price": 10.75,
+          "category": "payment",
+          "type": "ingoing",
+          "date": "10/07/2021"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "accNumber": "1111",
+      "sortCode": "12-12-12",
+      "accType": "current account",
+      "balance": 24.55,
+      "transactions": [
+        {
+          "vendorName": "TESCO",
+          "price": 1.5,
+          "category": "groceries",
+          "type": "outgoing",
+          "date": "10/07/2021"
+        },
+        {
+          "vendorName": "Amazon",
+          "price": 10.75,
+          "category": "groceries",
+          "type": "outgoing",
+          "date": "10/07/2021"
+        },
+        {
+          "vendorName": "nicolas maracora",
+          "price": 10.75,
+          "category": "payment",
+          "type": "ingoing",
+          "date": "10/07/2021"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "accNumber": "123",
+      "sortCode": "12-12-12",
+      "accType": "current account",
+      "balance": 320.56,
+      "transactions": [
+        {
+          "vendorName": "TESCO",
+          "price": 1.5,
+          "category": "groceries",
+          "type": "outgoing",
+          "date": "10/07/2021"
+        },
+        {
+          "vendorName": "Amazon",
+          "price": 10.75,
+          "category": "groceries",
+          "type": "outgoing",
+          "date": "10/07/2021"
+        },
+        {
+          "vendorName": "nicolas maracora",
+          "price": 10.75,
+          "category": "payment",
+          "type": "ingoing",
+          "date": "10/07/2021"
+        }
+      ]
+    }
+  ]
 }
