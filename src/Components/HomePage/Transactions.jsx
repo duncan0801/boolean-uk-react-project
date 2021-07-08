@@ -4,10 +4,30 @@ import BooleanLogo from "./BooleanLogo";
 import useStore from "../../store";
 import { useParams } from "react-router";
 import Transaction from "./Transcation";
+import { Search } from "@material-ui/icons";
+import Select from '@material-ui/core/Select';
+import SearchBar from "material-ui-search-bar";
 
 function Transactions() {
-    let activeCustomer = useStore(state => state.activeCustomer)
     const {accountId} = useParams()
+    let activeCustomer = useStore(state => state.activeCustomer)
+    const transactionSearchString = useStore(state => state.transactionSearchString)
+    const setTransactionSearchString = useStore(state => state.setTransactionSearchString)
+    const setActiveCustomerTransactions = useStore(state => state.setActiveCustomerTransactions)
+    let activeCustomerTransactions = useStore(state => state.setActiveCustomerTransactions)
+    
+    activeCustomerTransactions = activeCustomer.accounts[accountId - 1].transactions
+
+    function filterTransactions() {
+        const filtererdTransactions = activeCustomerTransactions.filter((transaction) => {
+            console.log(transaction.vendorName.toLowerCase())
+            console.log(transactionSearchString.toLowerCase())
+            console.log(transaction.vendorName.toLowerCase().includes(transactionSearchString.toLowerCase()))
+            return transaction.vendorName.toLowerCase().includes(transactionSearchString.toLowerCase())
+            // TODO
+        })
+        setActiveCustomerTransactions(filtererdTransactions)
+    }
 
 	return (
 		<section>
@@ -33,6 +53,14 @@ function Transactions() {
 						<h4>£123</h4>
 					</div>
 				</div>
+                <form className="searchForm">
+                    <SearchBar value={transactionSearchString} name="searchBar" onChange={(newValue)=> {
+                        setTransactionSearchString(newValue)
+                        filterTransactions()
+                    }
+                        }/>
+                    <Select/>
+                </form>
 				<table class="transactionsTable">
 					<thead>
 						<tr>
@@ -43,8 +71,9 @@ function Transactions() {
 						</tr>
 					</thead>
 					<tbody>
-						{activeCustomer.accounts[accountId - 1].transactions.map(transaction => {
+						{activeCustomerTransactions.map((transaction, index) => {
                             return <Transaction
+                            key={index}
                             vendorName={transaction.vendorName}
                             category={transaction.category}
                             date={transaction.date}
@@ -54,26 +83,6 @@ function Transactions() {
                         })}
 					</tbody>
 				</table>
-				{/* <ul className="transactionsList">
-					<li className="transaction">
-						<span>Tesco</span>
-						<span>Groceries</span>
-						<span>04/07/2021</span>
-						<span>£12.77</span>
-					</li>
-					<li className="transaction">
-						<span>Starbucks</span>
-						<span>Eating Out</span>
-						<span>03/07/2021</span>
-						<span>£4.95</span>
-					</li>
-					<li className="transaction">
-						<span>Amazon</span>
-						<span>Online Shopping</span>
-						<span>02/07/2021</span>
-						<span>£12.77</span>
-					</li>
-				</ul> */}
 			</section>
 		</section>
 	);

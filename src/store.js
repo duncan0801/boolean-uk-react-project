@@ -15,7 +15,12 @@ const store = (set) => ({
     activeCustomer: null,
     setActiveCustomer: (customer) => set(({activeCustomer: customer})),
     modal: "",
-    setModal: (modal) => set(({modal}))
+    setModal: (modal) => set(({modal})),
+    transactionSearchString: "",
+    setTransactionSearchString: (newValue) => set(({transactionSearchString: newValue})),
+    activeCustomerTransactions: [],
+    setActiveCustomerTransactions: (transactions) => set(({activeCustomerTransactions: transactions}))
+
     
 });
 
