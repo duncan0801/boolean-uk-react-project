@@ -34,7 +34,6 @@ function MakeAPayment() {
 			return account.id === Number(selectedAccount);
 		});
 
-		console.log("math", ingoingAccount.balance, "+", numberAmount);
 
 		fetch(`http://localhost:4000/accounts/${ingoingAccount.id}`, {
 			method: "PATCH",
@@ -42,7 +41,7 @@ function MakeAPayment() {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				balance: ingoingAccount.balance + numberAmount,
+				balance: (ingoingAccount.balance + numberAmount).toFixed(2),
 			}),
 		})
 			.then(
@@ -52,7 +51,7 @@ function MakeAPayment() {
 						"Content-Type": "application/json",
 					},
 					body: JSON.stringify({
-						balance: outgoingAccount.balance - numberAmount,
+						balance:( outgoingAccount.balance - numberAmount).toFixed(2),
 					}),
 				})
 			)

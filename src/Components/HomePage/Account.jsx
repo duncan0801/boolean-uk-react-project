@@ -21,7 +21,7 @@ function Account({accId, accountName, accountNumber, sortCode, balance, userId})
 				</h4>
 			</div>
 			<div className="balanceContainer">
-				<h4>£{balance}</h4>
+				<h4>£{balance.toFixed(2)}</h4>
 			</div>
 			<div className="actions">
 				<Link to={`/home/account/${accId}`} >Make a Payment</Link>

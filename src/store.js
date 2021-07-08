@@ -27,7 +27,7 @@ const store = (set) => ({
     setOutgoingAccountBalance: (accounts, prevBalance, amount, targetId) => set(({accounts: accounts.map((account) => {
         if(account.id === targetId) {
             return {
-                balance: prevBalance - amount,
+                balance: (prevBalance - amount).toFixed(2),
                 ...account
             }
         }
@@ -36,7 +36,7 @@ const store = (set) => ({
     setIngoingAccountBalance: (accounts, prevBalance, amount, targetId) => set(({accounts: accounts.map((account) => {
         if(account.id === targetId) {
             return {
-                balance: prevBalance + amount,
+                balance: (prevBalance + amount).toFixed(2),
                 ...account
             }
         }

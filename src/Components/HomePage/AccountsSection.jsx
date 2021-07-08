@@ -22,7 +22,7 @@ function Accounts() {
 				<h2>Accounts</h2>
 				<hr></hr>
 				{accounts.map((account, index) => {
-					if(account.id === activeCustomer.id) {
+					if(account.userId === activeCustomer.id) {
                         return (
                             <Account
                                 key={index}

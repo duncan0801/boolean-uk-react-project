@@ -1,6 +1,23 @@
 import { Button } from "@material-ui/core";
+import useStore from "../../store";
 
 function QuickTransfer() {
+    const accounts = useStore(state => state.accounts)
+    const activeCustomer =  useStore(state => state.activeCustomer)
+
+    let userAccountsCount = 0
+    accounts.map((account) => {
+        if(account.id ===  activeCustomer.id) {
+            console.log(account.id)
+            console.log(activeCustomer.id)
+            console.log(account.id ===  activeCustomer.id)
+            userAccountsCount = ++userAccountsCount
+        }
+        return
+    })
+   
+    console.log(userAccountsCount)
+   
 	return (
 		<section className="quickTransfer">
 			<h2>Quick Transfer</h2>
