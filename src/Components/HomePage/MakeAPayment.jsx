@@ -11,6 +11,7 @@ import { LocalConvenienceStoreOutlined } from "@material-ui/icons";
 function MakeAPayment() {
     const history = useHistory()
 	const { accountId } = useParams();
+    const users = useStore(state => state.users)
 	const activeCustomer = useStore((state) => state.activeCustomer);
 	const setOutgoingAccountBalance = useStore(
 		(state) => state.setOutgoingAccountBalance
@@ -21,20 +22,42 @@ function MakeAPayment() {
 	const accounts = useStore((state) => state.accounts);
 	const setSelectedAccount = useStore((state) => state.setSelectedAccount);
 	const selectedAccount = useStore((state) => state.selectedAccount);
+    const activeCustomerTransactions = useStore(state => state.activeCustomerTransactions)
+    const setActiveCustomerTransactions = useStore(state => state.setActiveCustomerTransactions)
 
 	setSelectedAccount(accountId);
+    function getDate() {
+        let current = new Date();
+		let cDate =
+        current.getDate().toString().padStart(2, '0') +
+        "-" +
+        (current.getMonth() + 1).toString().padStart(2, '0') +
+        "-" +
+		current.getFullYear()
 
-    // function postTransaction() {
-    //     fetch(`http://localhost:4000/accounts${accountId}/transactions`, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             transactions: []
-    //         })
-    //     })
-    // }
+        return cDate
+    }
+
+    function postTransaction(firstName, lastName, amount, type, accId) {
+
+        const newTransaction ={
+            "vendorName": firstName + " " + lastName,
+            "price": amount,
+            "category": "payment",
+            "type": type,
+            "date": getDate()
+        }
+        fetch(`http://localhost:4000/accounts/${accId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                transactions: [...accounts[accountId].transactions, newTransaction]
+            })
+        })
+        setActiveCustomerTransactions([...activeCustomerTransactions, newTransaction])
+    }
 
 	function handlePaymentSubmit(amount, targetAccNumber) {
 		let numberAmount = Number(amount);
@@ -45,6 +68,8 @@ function MakeAPayment() {
 		let outgoingAccount = accounts.find((account) => {
 			return account.id === Number(selectedAccount);
 		});
+        let ingoingCustomer = users.find((user) => user.id === ingoingAccount.userId)
+        
 
 
 		fetch(`http://localhost:4000/accounts/${ingoingAccount.id}`, {
@@ -53,9 +78,10 @@ function MakeAPayment() {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				balance: (ingoingAccount.balance + numberAmount).toFixed(2),
+				balance: ingoingAccount.balance + numberAmount,
 			}),
 		})
+        // .then(() =>  postTransaction(ingoingCustomer.firstName, ingoingCustomer.lastName, numberAmount, "ingoing", ingoingAccount.id))
 			.then(
 				fetch(`http://localhost:4000/accounts/${accountId}`, {
 					method: "PATCH",
@@ -63,11 +89,18 @@ function MakeAPayment() {
 						"Content-Type": "application/json",
 					},
 					body: JSON.stringify({
-						balance:( outgoingAccount.balance - numberAmount).toFixed(2),
+						balance:( outgoingAccount.balance - numberAmount),
 					}),
 				})
 			)
-			.then((resp) => (resp.ok ? alert("success") : alert("fail")))
+			.then((resp) => {
+                if(resp.ok) {
+                    alert("success")
+                }
+                if(!resp.ok) {
+                    alert("Fail")
+                }
+            })
 			.then(() =>
 				{
                     setOutgoingAccountBalance(
@@ -76,6 +109,7 @@ function MakeAPayment() {
 					numberAmount,
 					outgoingAccount.id
 				)
+                postTransaction(ingoingCustomer.firstName, ingoingCustomer.lastName, numberAmount, "outgoing", accountId)
                 history.push("/home")
             }
 			)

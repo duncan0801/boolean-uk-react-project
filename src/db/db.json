@@ -6,7 +6,7 @@
       "lastName": "Magill",
       "customerNumber": "00000001",
       "password": "password",
-      "lastLogin": "2021-7-9, 11:00:52",
+      "lastLogin": "09-07-2021, 12:34:58",
       "contacts": [
         {
           "name": "Nico Maracora",
@@ -108,7 +108,7 @@
       "accNumber": "0001",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 914.56,
+      "balance": 764.56,
       "transactions": [
         {
           "vendorName": "Duncan",
@@ -130,6 +130,13 @@
           "category": "payment",
           "type": "ingoing",
           "date": "10/07/2021"
+        },
+        {
+          "vendorName": "Nico Maracora",
+          "price": 10,
+          "category": "payment",
+          "type": "outgoing",
+          "date": "09-07-2021"
         }
       ]
     },
@@ -170,7 +177,7 @@
       "accNumber": "0003",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 320.56,
+      "balance": 470.56,
       "transactions": [
         {
           "vendorName": "nico",

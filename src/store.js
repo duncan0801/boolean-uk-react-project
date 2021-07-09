@@ -41,7 +41,9 @@ const store = (set) => ({
             }
         }
         return account
-    })})) 
+    })})),
+    currentAccount: null,
+    setCurrentAccount: (account) => set(({currentAccount: account}))
 
     
 });

@@ -13,11 +13,13 @@ function HomePage() {
 	function getTime() {
 		let current = new Date();
 		let cDate =
-			current.getFullYear() +
-			"-" +
-			(current.getMonth() + 1) +
-			"-" +
-			current.getDate();
+        current.getDate().toString().padStart(2, '0') +
+        "-" +
+        (current.getMonth() + 1).toString().padStart(2, '0') +
+        "-" +
+		current.getFullYear()
+			
+			
 		let cTime =
 			current.getHours().toString().padStart(2, '0') +
 			":" +

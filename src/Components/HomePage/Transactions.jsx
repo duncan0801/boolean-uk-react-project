@@ -5,42 +5,69 @@ import useStore from "../../store";
 import { useParams } from "react-router";
 import Transaction from "./Transcation";
 import { LocalConvenienceStoreOutlined, Search } from "@material-ui/icons";
-import Select from '@material-ui/core/Select';
+import Select from "@material-ui/core/Select";
 import SearchBar from "material-ui-search-bar";
 
 function Transactions() {
-    const {accId} = useParams()
+	const { accId } = useParams();
 
-    const accounts = useStore(state => state.accounts)
-    let activeCustomer = useStore(state => state.activeCustomer)
+	const accounts = useStore((state) => state.accounts);
+	let activeCustomer = useStore((state) => state.activeCustomer);
 
-    const transactionSearchString = useStore(state => state.transactionSearchString)
-    const setTransactionSearchString = useStore(state => state.setTransactionSearchString)
-    
-    const setActiveCustomerTransactions = useStore(state => state.setActiveCustomerTransactions)
-    let activeCustomerTransactions = useStore(state => state.activeCustomerTransactions)
+	let currentAccount = useStore((state) => state.currentAccount);
+	let setCurrentAccount = useStore((state) => state.setCurrentAccount);
 
-    function getTranscations() {
-        const targetAccount = accounts.find(account =>  {
-            return account.id === Number(accId)
-        })
+	const transactionSearchString = useStore(
+		(state) => state.transactionSearchString
+	);
+	const setTransactionSearchString = useStore(
+		(state) => state.setTransactionSearchString
+	);
 
-        console.log("targetAccount.transactions:", targetAccount.transactions)
-        setActiveCustomerTransactions(targetAccount.transactions) 
-    }
-    getTranscations()
+	const setActiveCustomerTransactions = useStore(
+		(state) => state.setActiveCustomerTransactions
+	);
+	let activeCustomerTransactions = useStore(
+		(state) => state.activeCustomerTransactions
+	);
 
-    // function filterTransactions() {
-    //     const filtererdTransactions = activeCustomerTransactions.filter((transaction) => {
-    //         return transaction.vendorName.toLowerCase().includes(transactionSearchString.toLowerCase())
-    //         // TODO
-    //     })
-    //     setActiveCustomerTransactions(filtererdTransactions)
-    // }
+	const selectedAccount = useStore((state) => state.selectedAccount);
+	const setSelectedAccount = useStore((state) => state.setSelectedAccount);
 
-    if(activeCustomerTransactions.length === 0) {
-        return null
-    }
+	setSelectedAccount(accId);
+
+	function getTranscations() {
+		const targetAccount = accounts.find((account) => {
+			return account.id === Number(accId);
+		});
+
+		console.log("targetAccount.transactions:", targetAccount.transactions);
+		setActiveCustomerTransactions(targetAccount.transactions);
+	}
+	getTranscations();
+
+	// function filterTransactions() {
+	//     const filtererdTransactions = activeCustomerTransactions.filter((transaction) => {
+	//         return transaction.vendorName.toLowerCase().includes(transactionSearchString.toLowerCase())
+	//         // TODO
+	//     })
+	//     setActiveCustomerTransactions(filtererdTransactions)
+	// }
+
+	function getCurrentAccount() {
+		const target = accounts.find((account) => {
+			console.log("account.id", account.id);
+			console.log("Number(selectedAccount)", Number(selectedAccount));
+			return account.id === Number(selectedAccount);
+		});
+		console.log(target);
+		return target;
+	}
+	setCurrentAccount(getCurrentAccount());
+
+	if (activeCustomerTransactions.length === 0 || !currentAccount) {
+		return null;
+	}
 
 	return (
 		<section>
@@ -55,25 +82,28 @@ function Transactions() {
 					<div className="accountDetails">
 						<h4>
 							<span className="lightWeight">Account No:</span>
-							4234234
+							{currentAccount.accNumber}
 						</h4>
 						<h4>
 							<span className="lightWeight">Sort Code: </span>
-							43423423
+							{currentAccount.sortCode}
 						</h4>
 					</div>
 					<div className="balanceContainer">
-						<h4>£123</h4>
+						<h4>£{currentAccount.balance}</h4>
 					</div>
 				</div>
-                <form className="searchForm">
-                    <SearchBar value={transactionSearchString} name="searchBar" onChange={(newValue)=> {
-                        setTransactionSearchString(newValue)
-                        // filterTransactions()
-                    }
-                        }/>
-                    <Select/>
-                </form>
+				<form className="searchForm">
+					<SearchBar
+						value={transactionSearchString}
+						name="searchBar"
+						onChange={(newValue) => {
+							setTransactionSearchString(newValue);
+							// filterTransactions()
+						}}
+					/>
+					<Select />
+				</form>
 				<table class="transactionsTable">
 					<thead>
 						<tr>
@@ -84,17 +114,20 @@ function Transactions() {
 						</tr>
 					</thead>
 					<tbody>
-						{
-                        activeCustomerTransactions.map((transaction, index) => {
-                            return <Transaction
-                            key={index}
-                            vendorName={transaction.vendorName}
-                            category={transaction.category}
-                            date={transaction.date}
-                            price={transaction.price}
-                            type={transaction.type}
-                            />
-                        })}
+						{activeCustomerTransactions.map(
+							(transaction, index) => {
+								return (
+									<Transaction
+										key={index}
+										vendorName={transaction.vendorName}
+										category={transaction.category}
+										date={transaction.date}
+										price={transaction.price}
+										type={transaction.type}
+									/>
+								);
+							}
+						)}
 					</tbody>
 				</table>
 			</section>

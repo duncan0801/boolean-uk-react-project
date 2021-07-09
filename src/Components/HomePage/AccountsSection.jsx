@@ -6,7 +6,6 @@ import useFetchUserAccounts from "../../Hooks/useFetchUserAccounts";
 function Accounts() {
 	const activeCustomer = useStore((state) => state.activeCustomer);
     const [accounts, setAccounts] = useFetchAccounts();
-    console.log(accounts)
 
     function filterAccounts() {
         let filteredAccounts = accounts.filter((account) => account.id === activeCustomer.id)
