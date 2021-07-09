@@ -1,5 +1,7 @@
 import { Button } from "@material-ui/core";
+import { TextFieldsRounded } from "@material-ui/icons";
 import useStore from "../../store";
+import CurrencyTextField from "@unicef/material-ui-currency-textfield";
 
 function QuickTransfer() {
     const accounts = useStore(state => state.accounts)
@@ -27,10 +29,24 @@ function QuickTransfer() {
 			<form className="transferForm">
 				<select name="from" id="from" placeholder="From...">
 					<option value="">From...</option>
+                    {activeCustomer.accounts.map((account, index) => {
+                        return <option key={index} value={`${account.accNumber}`}>{account.accNumber +" - " + account.accType}</option>
+                    })}
 				</select>
 				<select name="to" id="to" placeholder="To...">
 					<option value="">To...</option>
+                    {activeCustomer.accounts.map((account, index) => {
+                        return <option key={index} value={`${account.accNumber}`}>{account.accNumber +" - " + account.accType}</option>
+                    })}
 				</select>
+                <CurrencyTextField
+							name="amount"
+							label="Amount"
+							variant="filled"
+							outputFormat="string"
+							currencySymbol="£"
+							className="input"
+						/>
 				<Button color="secondary" variant="contained" type="submit">
 					Transfer
 				</Button>

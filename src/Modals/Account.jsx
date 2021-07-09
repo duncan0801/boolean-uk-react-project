@@ -12,6 +12,7 @@ function AccountModal() {
 	const setActiveCustomerTransactions = useStore((state) => state.setActiveCustomerTransactions);
 	const setAccounts = useStore((state) => state.setAccounts);
 	const setSelectedAccount = useStore((state) => state.setSelectedAccount);
+    const setCurrentAccount = useStore(state => state.setCurrentAccount)
 
 	if (modal === "") {
 		return null;
@@ -31,6 +32,7 @@ function AccountModal() {
                                 setActiveCustomerTransactions([])
                                 setAccounts([])
                                 setSelectedAccount("")
+                                setCurrentAccount(null)
                                 ;
 							}}
 							variant="contained"

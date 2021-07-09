@@ -90,7 +90,7 @@ function Transactions() {
 						</h4>
 					</div>
 					<div className="balanceContainer">
-						<h4>£{currentAccount.balance}</h4>
+						<h4>£{currentAccount.balance.toFixed(2)}</h4>
 					</div>
 				</div>
 				<form className="searchForm">

@@ -6,7 +6,7 @@ function Transaction({vendorName, category, date, price, type}) {
 			<td>{capitalise(vendorName)}</td>
 			<td>{capitalise(category)}</td>
 			<td>{date}</td>
-			<td>{type === "outgoing" ? `-£${price}`: `£${price}`}</td>
+			<td>{type === "outgoing" ? `-£${price.toFixed(2)}`: `£${price.toFixed(2)}`}</td>
 		</tr>
 	);
 }

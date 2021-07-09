@@ -6,7 +6,7 @@
       "lastName": "Magill",
       "customerNumber": "00000001",
       "password": "password",
-      "lastLogin": "09-07-2021, 12:34:58",
+      "lastLogin": "09-07-2021, 14:10:27",
       "contacts": [
         {
           "name": "Nico Maracora",
@@ -31,7 +31,7 @@
       "lastName": "Maracora",
       "customerNumber": "00000002",
       "password": "password",
-      "lastLogin": "2021-7-9, 10:58:22",
+      "lastLogin": "09-07-2021, 14:10:55",
       "contacts": [
         {
           "name": "Duncan Magill",
@@ -81,7 +81,7 @@
       "lastName": "rico",
       "customerNumber": "00000004",
       "password": "password",
-      "lastLogin": "2021-7-9, 08:51:47",
+      "lastLogin": "09-07-2021, 14:08:06",
       "contacts": [
         {
           "name": "Duncan Magill",
@@ -108,10 +108,10 @@
       "accNumber": "0001",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 764.56,
+      "balance": 274.55999999999995,
       "transactions": [
         {
-          "vendorName": "Duncan",
+          "vendorName": "LIDL",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -137,6 +137,13 @@
           "category": "payment",
           "type": "outgoing",
           "date": "09-07-2021"
+        },
+        {
+          "vendorName": "Nico Maracora",
+          "price": 10,
+          "category": "payment",
+          "type": "outgoing",
+          "date": "09-07-2021"
         }
       ]
     },
@@ -149,7 +156,7 @@
       "balance": 34.55,
       "transactions": [
         {
-          "vendorName": "Duncan",
+          "vendorName": "SAINSBURYS",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -177,10 +184,10 @@
       "accNumber": "0003",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 470.56,
+      "balance": 670.56,
       "transactions": [
         {
-          "vendorName": "nico",
+          "vendorName": "LIDL",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -199,6 +206,20 @@
           "category": "payment",
           "type": "ingoing",
           "date": "10/07/2021"
+        },
+        {
+          "vendorName": "Nico Maracora",
+          "price": 10,
+          "category": "payment",
+          "type": "outgoing",
+          "date": "09-07-2021"
+        },
+        {
+          "vendorName": "Duncan Magill",
+          "price": 10,
+          "category": "payment",
+          "type": "ingoing",
+          "date": "09-07-2021"
         }
       ]
     },
@@ -208,7 +229,7 @@
       "accNumber": "0004",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 10.56,
+      "balance": 210.56,
       "transactions": [
         {
           "vendorName": "sergio",
@@ -239,7 +260,7 @@
       "accNumber": "0005",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 100.95,
+      "balance": 200.95,
       "transactions": [
         {
           "vendorName": "Rico",
