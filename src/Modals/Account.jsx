@@ -30,7 +30,8 @@ function AccountModal() {
                                 setTransactionSearchString("")
                                 setActiveCustomerTransactions([])
                                 setAccounts([])
-                                setSelectedAccount("");
+                                setSelectedAccount("")
+                                ;
 							}}
 							variant="contained"
 						>

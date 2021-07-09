@@ -14,6 +14,9 @@ section h2 {
     border-radius: 10px;
 
 }
+.name {
+    font-size: large;
+}
 .userSection button:hover {
     background-color: rgb(3, 123, 187);
 }

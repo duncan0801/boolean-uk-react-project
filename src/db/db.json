@@ -6,7 +6,7 @@
       "lastName": "Magill",
       "customerNumber": "00000001",
       "password": "password",
-      "lastLogin": "2021-7-8, 20:0:30",
+      "lastLogin": "2021-7-9, 11:00:52",
       "contacts": [
         {
           "name": "Nico Maracora",
@@ -31,7 +31,7 @@
       "lastName": "Maracora",
       "customerNumber": "00000002",
       "password": "password",
-      "lastLogin": "2021-7-8, 19:56:38",
+      "lastLogin": "2021-7-9, 10:58:22",
       "contacts": [
         {
           "name": "Duncan Magill",
@@ -56,7 +56,7 @@
       "lastName": "Neaves",
       "customerNumber": "00000003",
       "password": "password",
-      "lastLogin": "2021-7-8, 19:57:26",
+      "lastLogin": "2021-7-9, 10:58:39",
       "contacts": [
         {
           "name": "Duncan Magill",
@@ -81,7 +81,7 @@
       "lastName": "rico",
       "customerNumber": "00000004",
       "password": "password",
-      "lastLogin": "2021-7-8, 19:57:52",
+      "lastLogin": "2021-7-9, 08:51:47",
       "contacts": [
         {
           "name": "Duncan Magill",
@@ -111,7 +111,7 @@
       "balance": 914.56,
       "transactions": [
         {
-          "vendorName": "TESCO",
+          "vendorName": "Duncan",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -142,7 +142,7 @@
       "balance": 34.55,
       "transactions": [
         {
-          "vendorName": "TESCO",
+          "vendorName": "Duncan",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -173,7 +173,7 @@
       "balance": 320.56,
       "transactions": [
         {
-          "vendorName": "TESCO",
+          "vendorName": "nico",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -201,10 +201,10 @@
       "accNumber": "0004",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 10.560000000000002,
+      "balance": 10.56,
       "transactions": [
         {
-          "vendorName": "TESCO",
+          "vendorName": "sergio",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -227,7 +227,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "userId": 4,
       "accNumber": "0005",
       "sortCode": "12-12-12",
@@ -235,7 +235,7 @@
       "balance": 100.95,
       "transactions": [
         {
-          "vendorName": "TESCO",
+          "vendorName": "Rico",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
@@ -246,13 +246,6 @@
           "price": 10.75,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
-        },
-        {
-          "vendorName": "nicolas maracora",
-          "price": 10.75,
-          "category": "payment",
-          "type": "ingoing",
           "date": "10/07/2021"
         }
       ]

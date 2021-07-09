@@ -25,7 +25,7 @@ function Account({accId, accountName, accountNumber, sortCode, balance, userId})
 			</div>
 			<div className="actions">
 				<Link to={`/home/account/${accId}`} >Make a Payment</Link>
-				<Link to={`/home/account/${userId}/transactions`}>View Transcation History</Link>
+				<Link to={`/home/account/${accId}/transactions`}>View Transcation History</Link>
 			</div>
 		</div>
 	);

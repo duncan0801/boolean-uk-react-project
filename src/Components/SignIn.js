@@ -61,10 +61,10 @@ export default function SignIn() {
 				event.target.customerNumber.value === user.customerNumber &&
 				event.target.password.value === user.password
 			) {
-				console.log("match");
+				
 				setActiveCustomer(user);
 			} else {
-				console.log("no match");
+				
 			}
 		});
 	}

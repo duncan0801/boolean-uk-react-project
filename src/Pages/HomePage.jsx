@@ -19,13 +19,12 @@ function HomePage() {
 			"-" +
 			current.getDate();
 		let cTime =
-			current.getHours() +
+			current.getHours().toString().padStart(2, '0') +
 			":" +
-			current.getMinutes() +
+			current.getMinutes().toString().padStart(2, "0")+
 			":" +
-			current.getSeconds();
+			current.getSeconds().toString().padStart(2, "0");
 		let dateTime = cDate + ", " + cTime;
-        console.log(dateTime)
 
         return dateTime
 	}
@@ -64,7 +63,7 @@ function HomePage() {
 			<Route exact path="/home/account/:accountId">
 				<MakeAPayment />
 			</Route>
-			<Route exact path="/home/account/:accountId/transactions">
+			<Route exact path="/home/account/:accId/transactions">
 				<Transactions />
 			</Route>
 		</div>

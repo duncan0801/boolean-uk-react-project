@@ -7,16 +7,18 @@ function QuickTransfer() {
 
     let userAccountsCount = 0
     accounts.map((account) => {
-        if(account.id ===  activeCustomer.id) {
-            console.log(account.id)
-            console.log(activeCustomer.id)
-            console.log(account.id ===  activeCustomer.id)
+        if(account.userId ===  activeCustomer.id) {
             userAccountsCount = ++userAccountsCount
         }
         return
     })
    
-    console.log(userAccountsCount)
+    
+    if(userAccountsCount <= 1) {
+        return (
+            <section></section>
+        )
+    }
    
 	return (
 		<section className="quickTransfer">

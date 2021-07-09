@@ -4,29 +4,42 @@ import BooleanLogo from "./BooleanLogo";
 import useStore from "../../store";
 import { useParams } from "react-router";
 import Transaction from "./Transcation";
-import { Search } from "@material-ui/icons";
+import { LocalConvenienceStoreOutlined, Search } from "@material-ui/icons";
 import Select from '@material-ui/core/Select';
 import SearchBar from "material-ui-search-bar";
 
 function Transactions() {
-    const {accountId} = useParams()
+    const {accId} = useParams()
+
+    const accounts = useStore(state => state.accounts)
     let activeCustomer = useStore(state => state.activeCustomer)
+
     const transactionSearchString = useStore(state => state.transactionSearchString)
     const setTransactionSearchString = useStore(state => state.setTransactionSearchString)
-    const setActiveCustomerTransactions = useStore(state => state.setActiveCustomerTransactions)
-    let activeCustomerTransactions = useStore(state => state.setActiveCustomerTransactions)
     
-    activeCustomerTransactions = activeCustomer.accounts[accountId - 1].transactions
+    const setActiveCustomerTransactions = useStore(state => state.setActiveCustomerTransactions)
+    let activeCustomerTransactions = useStore(state => state.activeCustomerTransactions)
 
-    function filterTransactions() {
-        const filtererdTransactions = activeCustomerTransactions.filter((transaction) => {
-            console.log(transaction.vendorName.toLowerCase())
-            console.log(transactionSearchString.toLowerCase())
-            console.log(transaction.vendorName.toLowerCase().includes(transactionSearchString.toLowerCase()))
-            return transaction.vendorName.toLowerCase().includes(transactionSearchString.toLowerCase())
-            // TODO
+    function getTranscations() {
+        const targetAccount = accounts.find(account =>  {
+            return account.id === Number(accId)
         })
-        setActiveCustomerTransactions(filtererdTransactions)
+
+        console.log("targetAccount.transactions:", targetAccount.transactions)
+        setActiveCustomerTransactions(targetAccount.transactions) 
+    }
+    getTranscations()
+
+    // function filterTransactions() {
+    //     const filtererdTransactions = activeCustomerTransactions.filter((transaction) => {
+    //         return transaction.vendorName.toLowerCase().includes(transactionSearchString.toLowerCase())
+    //         // TODO
+    //     })
+    //     setActiveCustomerTransactions(filtererdTransactions)
+    // }
+
+    if(activeCustomerTransactions.length === 0) {
+        return null
     }
 
 	return (
@@ -56,7 +69,7 @@ function Transactions() {
                 <form className="searchForm">
                     <SearchBar value={transactionSearchString} name="searchBar" onChange={(newValue)=> {
                         setTransactionSearchString(newValue)
-                        filterTransactions()
+                        // filterTransactions()
                     }
                         }/>
                     <Select/>
@@ -71,7 +84,8 @@ function Transactions() {
 						</tr>
 					</thead>
 					<tbody>
-						{activeCustomerTransactions.map((transaction, index) => {
+						{
+                        activeCustomerTransactions.map((transaction, index) => {
                             return <Transaction
                             key={index}
                             vendorName={transaction.vendorName}

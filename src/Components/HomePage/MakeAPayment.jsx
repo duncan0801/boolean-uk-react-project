@@ -24,6 +24,18 @@ function MakeAPayment() {
 
 	setSelectedAccount(accountId);
 
+    // function postTransaction() {
+    //     fetch(`http://localhost:4000/accounts${accountId}/transactions`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             transactions: []
+    //         })
+    //     })
+    // }
+
 	function handlePaymentSubmit(amount, targetAccNumber) {
 		let numberAmount = Number(amount);
 
