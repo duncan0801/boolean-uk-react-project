@@ -6,7 +6,7 @@ function useFetchAccounts() {
 	const setAccounts = useStore((state) => state.setAccounts);
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/accounts`)
+		fetch(`http://localhost:4001/accounts`)
 			.then((resp) => resp.json())
 			.then((data) => setAccounts(data));
 	}, []);

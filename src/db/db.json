@@ -6,7 +6,7 @@
       "lastName": "Magill",
       "customerNumber": "00000001",
       "password": "password",
-      "lastLogin": "09-07-2021, 14:10:27",
+      "lastLogin": "09-07-2021, 23:15:35",
       "contacts": [
         {
           "name": "Nico Maracora",
@@ -31,7 +31,7 @@
       "lastName": "Maracora",
       "customerNumber": "00000002",
       "password": "password",
-      "lastLogin": "09-07-2021, 14:10:55",
+      "lastLogin": "09-07-2021, 16:31:48",
       "contacts": [
         {
           "name": "Duncan Magill",
@@ -56,7 +56,7 @@
       "lastName": "Neaves",
       "customerNumber": "00000003",
       "password": "password",
-      "lastLogin": "2021-7-9, 10:58:39",
+      "lastLogin": "09-07-2021, 16:38:19",
       "contacts": [
         {
           "name": "Duncan Magill",
@@ -108,39 +108,53 @@
       "accNumber": "0001",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 274.55999999999995,
+      "balance": -100,
       "transactions": [
         {
           "vendorName": "LIDL",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "08-07-2021"
         },
         {
           "vendorName": "Amazon",
           "price": 10.75,
-          "category": "groceries",
+          "category": "Online Shopping",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "08-07-2021"
         },
         {
-          "vendorName": "nicolas maracora",
+          "vendorName": "O2",
           "price": 10.75,
+          "category": "phone payment",
+          "type": "outgoing",
+          "date": "08-07-2021"
+        },
+        {
+          "vendorName": "Duncan Magill",
+          "price": 100,
           "category": "payment",
           "type": "ingoing",
-          "date": "10/07/2021"
+          "date": "09-07-2021"
         },
         {
           "vendorName": "Nico Maracora",
-          "price": 10,
+          "price": 100,
+          "category": "payment",
+          "type": "ingoing",
+          "date": "09-07-2021"
+        },
+        {
+          "vendorName": "Nico Maracora",
+          "price": 100,
           "category": "payment",
           "type": "outgoing",
           "date": "09-07-2021"
         },
         {
           "vendorName": "Nico Maracora",
-          "price": 10,
+          "price": 100,
           "category": "payment",
           "type": "outgoing",
           "date": "09-07-2021"
@@ -160,21 +174,21 @@
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "08-07-2021"
         },
         {
           "vendorName": "Amazon",
           "price": 10.75,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "08-07-2021"
         },
         {
           "vendorName": "nicolas maracora",
           "price": 10.75,
           "category": "payment",
           "type": "ingoing",
-          "date": "10/07/2021"
+          "date": "08-07-2021"
         }
       ]
     },
@@ -184,39 +198,53 @@
       "accNumber": "0003",
       "sortCode": "12-12-12",
       "accType": "current account",
-      "balance": 670.56,
+      "balance": 870.56,
       "transactions": [
         {
           "vendorName": "LIDL",
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "08-07-2021"
         },
         {
           "vendorName": "Amazon",
           "price": 10.75,
-          "category": "groceries",
+          "category": "Online Shopping",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "08-07-2021"
         },
         {
-          "vendorName": "nicolas maracora",
+          "vendorName": "O2",
           "price": 10.75,
+          "category": "phone payment",
+          "type": "outgoing",
+          "date": "08-07-2021"
+        },
+        {
+          "vendorName": "Duncan Magill",
+          "price": 100,
           "category": "payment",
           "type": "ingoing",
-          "date": "10/07/2021"
+          "date": "09-07-2021"
         },
         {
           "vendorName": "Nico Maracora",
-          "price": 10,
+          "price": 100,
+          "category": "payment",
+          "type": "ingoing",
+          "date": "09-07-2021"
+        },
+        {
+          "vendorName": "Nico Maracora",
+          "price": 100,
           "category": "payment",
           "type": "outgoing",
           "date": "09-07-2021"
         },
         {
           "vendorName": "Duncan Magill",
-          "price": 10,
+          "price": 100,
           "category": "payment",
           "type": "ingoing",
           "date": "09-07-2021"
@@ -236,21 +264,21 @@
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "10-07-2021"
         },
         {
           "vendorName": "Amazon",
           "price": 10.75,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "10-07-2021"
         },
         {
           "vendorName": "nicolas maracora",
           "price": 10.75,
           "category": "payment",
           "type": "ingoing",
-          "date": "10/07/2021"
+          "date": "10-07-2021"
         }
       ]
     },
@@ -267,14 +295,14 @@
           "price": 1.5,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "10-07-2021"
         },
         {
           "vendorName": "Amazon",
           "price": 10.75,
           "category": "groceries",
           "type": "outgoing",
-          "date": "10/07/2021"
+          "date": "10-07-2021"
         }
       ]
     }
